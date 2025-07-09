@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Chocolates Finos</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"/>
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      font-family: 'Roboto', sans-serif;
+      background-color: #fff;
+      color: #333;
+    }
+
+    .page-content {
+      flex: 1 0 auto;
+    }
+
+    .purple {
+      background-color: #702476 !important;
+    }
+
+    .text-purple {
+      color: #702476 !important;
+    }
+
+    .search-wrapper {
+      position: relative;
+      max-width: 450px;
+      margin: 0 auto;
+    }
+
+    .search-wrapper input {
+      background: transparent;
+      border: none;
+      border-bottom: 1px solid #D1B787;
+      padding-left: 0;
+      color: #555;
+    }
+
+    .search-wrapper .fa-search {
+      position: absolute;
+      right: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #D1B787;
+    }
+
+    .product-title {
+      font-size: 1.8rem;
+      font-weight: bold;
+      margin-bottom: 1rem;
+    }
+
+    .product-description p {
+      margin-bottom: 1rem;
+    }
+
+    footer.page-footer {
+      background-color: #702476 !important;
+      margin-bottom: 0;
+    }
+
+    footer a {
+      color: white;
+    }
+
+    .icons a {
+      margin-left: 16px;
+    }
+
+    nav {
+      box-shadow: none !important;
+      background-color: white !important;
+      position: relative;
+    }
+
+    nav::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background-color: #e0e0e0;
+      max-width: 1200px;
+      margin: 0 auto;
+      right: 0;
+    }
+
+    .footer-copy {
+      background-color: #702476;
+      text-align: center;
+      padding: 16px 0;
+      font-size: 0.9rem;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+
+<div class="page-content">
+  <header class="section">
+    <div class="container" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
+      <div class="logo">
+        <img src="secretologo-01.png" alt="Logo" style="height: 150px;">
+      </div>
+      <div class="search-wrapper">
+        <input type="text" placeholder="Buscar...">
+        <i class="fas fa-search"></i>
+      </div>
+      <div class="icons" style="display: flex; align-items: center;">
+        <a href="#" style="color: #f1c40f;"><i class="fas fa-user"></i></a>
+        <a href="#" style="color: #f1c40f;"><i class="fas fa-shopping-cart"></i></a>
+      </div>
+    </div>
+
+    <nav>
+      <div class="container center-align" style="display: flex; justify-content: center; gap: 30px; flex-wrap: wrap;">
+        <a href="#" style="color: #702476; font-weight: 600; text-decoration: none;">Calafate</a>
+        <a href="#" style="color: #702476; font-weight: 600; text-decoration: none;">Chocolates</a>
+        <a href="#" style="color: #702476; font-weight: 600; text-decoration: none;">Mermeladas</a>
+        <a href="#" style="color: #702476; font-weight: 600; text-decoration: none;">Ruibarbo</a>
+        <a href="#" style="color: #702476; font-weight: 600; text-decoration: none;">Otros</a>
+      </div>
+    </nav>
+  </header>
+
+  <div class="container section">
+    <div class="row">
+      <div class="col s12 m6">
+        <img src="producto-3.webp" alt="Syrup Artesanal de Calafate" class="responsive-img" style="aspect-ratio: 4/3; object-fit: cover;">
+      </div>
+      <div class="col s12 m6">
+        <h1 class="product-title">Chocolates Finos - Caja con Chocolates Surtidos 16 barritas distintos sabores de 400 g</h1>
+        <div class="product-description">
+          <p>Los mejores chocolates artesanales de la Patagonia en la caja de 400 g de Secreto de la Patagonia.</p>
+          <p>Una selección exquisita y cuidada de 16 barras de fino chocolate templado en mármol con diferentes sabores del sur como Calafate y Ruibarbo, además de una figura de chocolate macizo, ideal para regalar y compartir.</p>
+          <p>¡Descubre los deliciosos chocolates de pasta surtidos Secreto de la Patagonia!</p>
+          <p><strong>Envase reciclable.</strong></p>
+        </div>
+        <h5 class="text-purple">$28.500</h5>
+        <div class="input-field inline">
+          <button class="btn grey lighten-1" onclick="decreaseQuantity()">-</button>
+          <input id="quantity" type="number" value="1" min="1" class="validate" style="width: 60px;">
+          <button class="btn grey lighten-1" onclick="increaseQuantity()">+</button>
+        </div>
+        <div class="section">
+          <button class="btn purple">Agregar al Carro</button>
+          <button class="btn white purple-text">Comprar ahora</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sección de Productos Destacados -->
+  <section class="section grey lighten-4">
+    <div class="container">
+      <h4 class="center-align text-purple" style="margin-bottom: 2rem;">Productos Destacados</h4>
+      <div class="row">
+        <div class="col s12 m4">
+          <div class="card">
+            <div class="card-image">
+              <img src="producto-1.webp" alt="Producto 1">
+            </div>
+            <div class="card-content center-align">
+              <h5 class="text-purple">Caja 8 Alfajores</h5>
+              <p>$16.190</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col s12 m4">
+          <div class="card">
+            <div class="card-image">
+              <a href="producto.html">
+                <img src="producto-2.webp" alt="Producto 2">
+              </a>
+            </div>
+            <div class="card-content center-align">
+              <h5 class="text-purple">Syrup Calafate</h5>
+              <p>$7.500</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col s12 m4">
+          <div class="card">
+            <div class="card-image">
+                <img src="producto-6.webp" alt="Producto 3">
+              </a>
+            </div>
+            <div class="card-content center-align">
+              <h5 class="text-purple">Chocolates Flores</h5>
+              <p>$12.200</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<footer class="page-footer purple">
+  <div class="container">
+    <div class="row">
+      <div class="col s12 m6">
+        <h5 class="white-text">Contacto</h5>
+        <p><i class="fas fa-envelope"></i> contacto@secretodelapatagonia.cl</p>
+        <p><i class="fas fa-phone"></i> +56 61 2245659</p>
+        <p><i class="fab fa-whatsapp"></i> +56 9 6836 8574</p>
+      </div>
+      <div class="col s12 m6">
+        <h5 class="white-text">Dirección</h5>
+        <p><i class="fas fa-map-marker-alt"></i> Ignacio Carrera Pinto 245, Punta Arenas, Magallanes, Chile</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<div class="footer-copy">
+  © 2025 Secreto de la Patagonia. Todos los derechos reservados.
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script>
+  function increaseQuantity() {
+    const qty = document.getElementById("quantity");
+    qty.value = parseInt(qty.value) + 1;
+  }
+
+  function decreaseQuantity() {
+    const qty = document.getElementById("quantity");
+    if (parseInt(qty.value) > 1) qty.value = parseInt(qty.value) - 1;
+  }
+</script>
+</body>
+</html>

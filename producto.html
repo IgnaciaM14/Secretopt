@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Syrup Artesanal de Calafate</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: #fff;
+      color: #333;
+    }
+    .product-title {
+      font-size: 1.8rem;
+      font-weight: bold;
+    }
+    .product-description {
+      margin-top: 1rem;
+    }
+    .thumbnail {
+      border: 2px solid transparent;
+      cursor: pointer;
+    }
+    .thumbnail:hover {
+      border-color: #702476;
+    }
+    .active-thumb {
+      border-color: #702476;
+    }
+    .purple {
+      color: white;
+      background-color: #702476;
+      border-color: #702476;
+    }
+    .has-text-purple {
+      color: #702476 !important;
+    }
+    .has-background-purple {
+      background-color: #702476 !important;
+    }
+    .search-wrapper {
+      position: relative;
+      max-width: 450px;
+      margin: 0 auto;
+    }
+    .search-wrapper input {
+      width: 100%;
+      background: transparent;
+      border: none;
+      border-bottom: 1px solid #D1B787;
+      padding: 6px 28px 6px 6px;
+      color: #555;
+      font-size: 1rem;
+    }
+    .search-wrapper input:focus {
+      outline: none;
+      border-color: #b99c65;
+    }
+    .search-wrapper .fa-search {
+      position: absolute;
+      right: 6px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #D1B787;
+    }
+    footer {
+      background-color: #702476;
+      color: #fff;
+    }
+    footer a {
+      color: #fff;
+    }
+    .header-separator {
+      border-top: 1px solid #ccc;
+      margin-top: 2rem;
+    }
+    .icons .icon:not(:last-child) {
+      margin-right: 16px;
+    }
+  </style>
+</head>
+<body>
+
+<header class="section">
+  <div class="container is-flex is-justify-content-space-between is-align-items-center">
+    <div class="logo">
+      <img src="secretologo-01.png" alt="Logo" style="height: 150px;">
+    </div>
+    <div class="search-wrapper">
+      <input type="text" placeholder="Buscar...">
+      <i class="fas fa-search"></i>
+    </div>
+    <div class="icons is-flex is-align-items-center">
+      <a href="#" class="icon has-text-warning"><i class="fas fa-user"></i></a>
+      <a href="#" class="icon has-text-warning"><i class="fas fa-shopping-cart"></i></a>
+    </div>
+  </div>
+
+  <div class="header-separator"></div>
+
+  <nav class="navbar has-background-white mt-3">
+    <div class="container is-flex is-justify-content-center">
+      <a class="navbar-item has-text-purple" href="#">Calafate</a>
+      <a class="navbar-item has-text-purple" href="#">Chocolates</a>
+      <a class="navbar-item has-text-purple" href="#">Mermeladas</a>
+      <a class="navbar-item has-text-purple" href="#">Ruibarbo</a>
+      <a class="navbar-item has-text-purple" href="#">Otros</a>
+    </div>
+  </nav>
+</header>
+
+<section class="section">
+  <div class="container">
+    <div class="columns is-vcentered">
+      <div class="column is-6">
+        <figure class="image" style="aspect-ratio: 4/3; overflow: hidden;">
+          <img id="main-image" src="producto-2.webp" alt="Syrup Artesanal de Calafate" style="object-fit: cover; width: 100%; height: 100%;">
+        </figure>
+      </div>
+      <div class="column is-6">
+        <h1 class="title is-4">Syrup Artesanal de Calafate - Botella 320g</h1>
+        <p class="mb-2">Syrup Artesanal de Calafate Origen Patagonia Chilena: Déjate deleitar con el sabor único de nuestro Endulzante de Calafate Chileno. Disfruta de su dulce sabor para postres, bebidas y cócteles.</p>
+        <p class="mb-2">Viene en una botella de 250 cc (320 g) para poder apreciar al máximo su aroma. Envíos a todo Chile.</p>
+        <p class="mb-2">¡Compra hoy el Syrup Artesanal de Calafate Origen Chileno!</p>
+        <p class="mb-4"><strong>Incluye Receta para preparar Calafate Sour.</strong></p>
+        <p class="is-size-4 has-text-purple has-text-weight-bold mb-4">$7.500</p>
+
+        <div class="field has-addons">
+          <div class="control">
+            <button class="button is-light" onclick="decreaseQuantity()">-</button>
+          </div>
+          <div class="control">
+            <input class="input" type="number" id="quantity" value="1" min="1" style="width: 80px;">
+          </div>
+          <div class="control">
+            <button class="button is-light" onclick="increaseQuantity()">+</button>
+          </div>
+        </div>
+
+        <div class="buttons mt-3">
+          <button class="button purple">Agregar al Carro</button>
+          <button class="button is-outlined purple">Comprar ahora</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Productos Destacados -->
+<section class="section has-background-light">
+  <div class="container">
+    <h2 class="title is-4 has-text-centered has-text-purple mb-6">Productos Destacados</h2>
+    <div class="columns is-multiline is-variable is-6">
+      <div class="column is-4">
+        <div class="card">
+          <div class="card-image">
+            <figure class="image is-square">
+              <img src="producto-1.webp" alt="Producto 1">
+            </figure>
+          </div>
+          <div class="card-content has-text-centered">
+            <h5 class="title is-5 has-text-purple">Caja 8 Alfajores</h5>
+            <p class="has-text-weight-semibold">$16.190</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="column is-4">
+        <div class="card">
+          <div class="card-image">
+              <figure class="image is-square">
+                <img src="producto-6.webp" alt="Producto 2">
+              </figure>
+          </div>
+          <div class="card-content has-text-centered">
+            <h5 class="title is-5 has-text-purple">Chocolates Flores</h5>
+            <p class="has-text-weight-semibold">$12.200</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="column is-4">
+        <div class="card">
+          <div class="card-image">
+            <a href="producto_02.html">
+              <figure class="image is-square">
+                <img src="producto-3.webp" alt="Producto 3">
+              </figure>
+            </a>
+          </div>
+          <div class="card-content has-text-centered">
+            <h5 class="title is-5 has-text-purple">Chocolates Surtidos</h5>
+            <p class="has-text-weight-semibold">$28.500</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer has-background-purple">
+  <div class="container">
+    <div class="columns">
+      <div class="column">
+        <h5 class="title is-5 has-text-white">Contacto</h5>
+        <p><i class="fas fa-envelope"></i> contacto@secretodelapatagonia.cl</p>
+        <p><i class="fas fa-phone"></i> +56 61 2245659</p>
+        <p><i class="fab fa-whatsapp"></i> +56 9 6836 8574</p>
+      </div>
+      <div class="column">
+        <h5 class="title is-5 has-text-white">Dirección</h5>
+        <p><i class="fas fa-map-marker-alt"></i> Ignacio Carrera Pinto 245, Punta Arenas, Magallanes, Chile</p>
+      </div>
+    </div>
+    <div class="has-text-centered has-text-white">
+      <small>© 2025 Secreto de la Patagonia. Todos los derechos reservados.</small>
+    </div>
+  </div>
+</footer>
+
+<script>
+  function changeImage(el) {
+    const mainImage = document.getElementById("main-image");
+    const thumbnails = document.querySelectorAll(".thumbnail");
+    thumbnails.forEach(t => t.classList.remove("active-thumb"));
+    el.classList.add("active-thumb");
+    mainImage.src = el.src;
+  }
+  function increaseQuantity() {
+    const qty = document.getElementById("quantity");
+    qty.value = parseInt(qty.value) + 1;
+  }
+  function decreaseQuantity() {
+    const qty = document.getElementById("quantity");
+    if (parseInt(qty.value) > 1) qty.value = parseInt(qty.value) - 1;
+  }
+</script>
+</body>
+</html>
